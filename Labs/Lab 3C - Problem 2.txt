@@ -1,0 +1,26 @@
+static void Main(string[] args)
+        {
+            Problem2();
+        }
+
+        public static double InputValidation(string message)
+        {
+            double varA;
+            string val = Console.ReadLine();
+            while(!(double.TryParse(val, out varA) && (varA > 0)))
+            {
+                Console.WriteLine("Invalid Data");
+                Console.WriteLine(message);
+                val = Console.ReadLine();
+            }
+            return varA;
+
+        }
+        public static void Problem2()
+        {
+            Console.WriteLine("Input number of feet:");
+            double ft = InputValidation("Input number of feet:");
+            double inches = ft * 12;
+            Console.WriteLine($"There are {inches} inches in {ft} feet.");
+            Console.ReadKey();
+        }

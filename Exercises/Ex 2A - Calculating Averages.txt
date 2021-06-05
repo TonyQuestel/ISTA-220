@@ -1,0 +1,417 @@
+ static void Main(string[] args)
+        {
+            /*
+             * //1. Basic difficulty
+            Console.WriteLine("This program will produce the sum from 10 numbers of your input between 0 and 100");
+
+            int[] numberArray = new int[10];
+            int convert, total;
+            bool failed;
+            string answer, prompt = "Enter your 1st number:";
+
+            for (int i = 0; i < 10; i++)
+            {
+                //switch statement to interpolate string 'prompt'
+                int iteration = i;
+                switch (iteration)
+                {
+                    case 0:
+                        Console.WriteLine(prompt);
+                        break;
+                    case 1:
+                        prompt = prompt.Replace("1st", "2nd");
+                        Console.WriteLine(prompt);
+                        break;
+                    case 2:
+                        prompt = prompt.Replace("2nd", "3rd");
+                        Console.WriteLine(prompt);
+                        break;
+                    case 3:
+                        prompt = prompt.Replace("3rd", "4th");
+                        Console.WriteLine(prompt);
+                        break;
+                    case 4:
+                        prompt = prompt.Replace("4th", "5th");
+                        Console.WriteLine(prompt);
+                        break;
+                    case 5:
+                        prompt = prompt.Replace("5th", "6th");
+                        Console.WriteLine(prompt);
+                        break;
+                    case 6:
+                        prompt = prompt.Replace("6th", "7th");
+                        Console.WriteLine(prompt);
+                        break;
+                    case 7:
+                        prompt = prompt.Replace("7th", "8th");
+                        Console.WriteLine(prompt);
+                        break;
+                    case 8:
+                        prompt = prompt.Replace("8th", "9th");
+                        Console.WriteLine(prompt);
+                        break;
+                    case 9:
+                        prompt = prompt.Replace("9th", "10th");
+                        Console.WriteLine(prompt);
+                        break;
+                }
+
+                answer = Console.ReadLine();
+                convert = int.Parse(answer);
+
+                //checks for range validity and adds to the index of the array if true
+                if (convert >= 0 && convert <= 100)
+                {
+                    numberArray[i] = convert;
+                }
+                else
+                {
+                    failed = true;
+
+                    //error handling loop for incorrect values
+                    while (failed == true)
+                    {
+                        Console.WriteLine("That is not a valid input. Please enter a valid number:");
+                        answer = Console.ReadLine();
+                        convert = int.Parse(answer);
+                       
+                        //return to for loop if this last check is valid
+                        if (convert >= 0 && convert <= 100)
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+
+            total = numberArray.Sum();
+            Console.WriteLine($"The Sum of the integers you provided is: {total}");
+            Console.ReadKey();
+            */
+
+
+            /*
+            //2. Average 10 scores
+            Console.WriteLine("This program will produce the average from 10 test scores of your input between 0 and 100 and provide the letter grade");
+
+            double[] numberArray = new double[10];
+            double convert, total, average;
+            bool failed;
+            string answer, prompt = "Enter your 1st test score:";
+           
+
+            for (int i = 0; i < 10; i++)
+            {
+                //switch statement to interpolate string 'prompt'
+                int iteration = i;
+                switch (iteration)
+                {
+                    case 0:
+                        Console.WriteLine(prompt);
+                        break;
+                    case 1:
+                        prompt = prompt.Replace("1st", "2nd");
+                        Console.WriteLine(prompt);
+                        break;
+                    case 2:
+                        prompt = prompt.Replace("2nd", "3rd");
+                        Console.WriteLine(prompt);
+                        break;
+                    case 3:
+                        prompt = prompt.Replace("3rd", "4th");
+                        Console.WriteLine(prompt);
+                        break;
+                    case 4:
+                        prompt = prompt.Replace("4th", "5th");
+                        Console.WriteLine(prompt);
+                        break;
+                    case 5:
+                        prompt = prompt.Replace("5th", "6th");
+                        Console.WriteLine(prompt);
+                        break;
+                    case 6:
+                        prompt = prompt.Replace("6th", "7th");
+                        Console.WriteLine(prompt);
+                        break;
+                    case 7:
+                        prompt = prompt.Replace("7th", "8th");
+                        Console.WriteLine(prompt);
+                        break;
+                    case 8:
+                        prompt = prompt.Replace("8th", "9th");
+                        Console.WriteLine(prompt);
+                        break;
+                    case 9:
+                        prompt = prompt.Replace("9th", "10th");
+                        Console.WriteLine(prompt);
+                        break;
+                }
+
+                answer = Console.ReadLine();
+                convert = double.Parse(answer);
+
+                //checks for range validity and adds to the index of the array if true
+                if (convert >= 0 && convert <= 100)
+                {
+                    numberArray[i] = convert;
+                }
+                else
+                {
+                    failed = true;
+
+                    //error handling loop for incorrect values
+                    while (failed == true)
+                    {
+                        Console.WriteLine("That is not a valid input. Please enter a valid number:");
+                        answer = Console.ReadLine();
+                        convert = double.Parse(answer);
+
+                        //return to for loop if this last check is valid
+                        if (convert >= 0 && convert <= 100)
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+            
+            total = numberArray.Sum();
+            average = total / numberArray.Length;
+            char letterGrade = 'Z';  //For testing purposes, I assigned an abusrd value to this char
+
+            //determination of the letter grade
+            if (average >= 90 && average <= 100)
+            {
+                letterGrade = 'A';
+            }
+            else if(average >= 80 && average <= 89.9)
+                {
+                letterGrade = 'B';
+                }
+            else if(average >= 70 && average <= 79.9)
+                {
+                letterGrade = 'C';
+                }
+            else if(average >= 60 && average <= 69.9)
+                {
+                letterGrade = 'D';
+                }
+            else if(average < 60)
+                {
+                letterGrade = 'F';
+                }
+
+
+            Console.WriteLine($"The average of the test scores you provided is: {average} and the grade is: {letterGrade}");
+            Console.ReadKey();
+            */
+
+            /*
+            //3. Average a specific number of test scores
+
+            double convert, total, average;
+            bool failed;
+            string answer;
+            string welcome1 = "-This program will produce the average and letter grade from a number of scores of your choosing";
+            string welcome2 = "\n-The input values must be between 0 and 100";
+            string prompt1 = "\nHow many scores will you be intering?";
+            string prompt2 = "\nEnter your 1st test score:";
+            string prompt3 = "Enter your next test score:";
+            string error = "That is not a valid input. Please try again.";
+
+            Console.WriteLine(welcome1 + welcome2);
+            Console.WriteLine(prompt1);
+            //prompt user for the # of scores to be entered which will set the size of the array
+            answer = Console.ReadLine();
+            int howMany = int.Parse(answer);
+
+            double[] numberArray = new double[howMany];
+
+            Console.WriteLine(prompt2);
+
+            //Loop to add the input values to the array index that equals i
+            for (int i = 0; i < numberArray.Length; i++)
+            {
+
+                answer = Console.ReadLine();
+                convert = double.Parse(answer);
+
+                //checks for range validity and adds to the array if true
+                if (convert >= 0 && convert <= 100)
+                {
+                    numberArray[i] = convert;
+
+                    if (i < (numberArray.Length - 1))
+                    {
+                        Console.WriteLine(prompt3);
+                    }
+                }
+                else
+                {
+                    failed = true;
+
+                    //error handling loop for incorrect values
+                    while (failed == true)
+                    {
+                        Console.WriteLine(error);
+                        answer = Console.ReadLine();
+                        convert = double.Parse(answer);
+
+                        //return to for loop if this last check is valid
+                        if (convert >= 0 && convert <= 100)
+                        {
+                            break;
+                        }
+                    }
+
+
+                }
+            }
+
+            total = numberArray.Sum();
+            average = total / numberArray.Length;
+            char letterGrade = 'Z';  //For testing purposes, I assigned an abusrd value to this char
+
+            //determination of the letter grade
+            if (average >= 90 && average <= 100)
+            {
+                letterGrade = 'A';
+            }
+            else if (average >= 80 && average <= 89.9)
+            {
+                letterGrade = 'B';
+            }
+            else if (average >= 70 && average <= 79.9)
+            {
+                letterGrade = 'C';
+            }
+            else if (average >= 60 && average <= 69.9)
+            {
+                letterGrade = 'D';
+            }
+            else if (average < 60)
+            {
+                letterGrade = 'F';
+            }
+
+
+            Console.WriteLine($"The average of the test scores you provided is: {average} and the grade is: {letterGrade}");
+            Console.ReadKey();
+            */
+
+
+            /*
+            //4. Average a non-specific number of test scores
+
+            List<double> scores = new List<double>();
+            double convert, average;
+            bool failed, wrongInput;
+            string answer;
+            string prompt1 = "\nEnter your 1st test score:";
+            string prompt2 = "Would you like to input another test score? Y/N";
+            string prompt3 = "Enter your next test score:";
+            string error = "That is not a valid input. Please try again.";
+
+            Console.WriteLine("This program will produce the average from any number of test scores from your input and provide the letter grade" +
+                "\nThe input values must be between 0 and 100");
+            Console.WriteLine(prompt1);
+         
+
+            for (int i = 0; i < 1000; i++)
+            {
+                answer = Console.ReadLine();
+                convert = double.Parse(answer);
+
+                //checks for range validity and adds to the list if true
+                if (convert >= 0 && convert <= 100)
+                {
+                    scores.Add(convert);
+                }
+                else
+                {
+                    failed = true;
+
+                    //error handling loop for incorrect values
+                    while (failed == true)
+                    {
+                        Console.WriteLine(error);
+                        answer = Console.ReadLine();
+                        convert = double.Parse(answer);
+
+                        //return to for loop if this last check is valid
+                        if (convert >= 0 && convert <= 100)
+                        {
+                            break;
+                        }
+                    }
+                }
+
+                //prompt user if they want to continue entering grades
+                Console.WriteLine(prompt2);
+                string x = Console.ReadLine();
+
+                if (x == "Y" || x == "y")                               //assigns string x to check for yes or no
+                {
+                    Console.WriteLine(prompt3);                                                        
+                }
+                else if (x == "N" || x == "n")
+                {
+                    break;
+                }
+                else                                                    //error loop for incorrect input
+                {
+                    wrongInput = true;
+                    
+                    while(wrongInput == true)
+                    {
+                        Console.WriteLine(error);
+                        x = Console.ReadLine();                         //re-prompts for correct input of Y or N
+
+                        if (x == "Y" || x == "y")
+                        {
+                            Console.WriteLine(prompt3);                 //condition that will exit the error handling
+                            break;
+                        }
+                        if (x == "N" || x == "n")                        //using a break here was not working correctly. By using the goto statement
+                        {                                                //I was able to successfully exit the nested loops once a valid answer of no 
+                            goto LoopEnd;                                //was obtained since it is still a valid input. The problem was that ther was no
+                        }                                                //re-prompt for a value in range (because it was unnecessary).
+                        
+                    }
+                  
+                    
+                }
+            }
+
+            LoopEnd:
+            average = scores.Average();
+            char letterGrade = 'Z';  //For testing purposes, I assigned an abusrd value to this char
+            
+            //determination of the letter grade
+            if (average >= 90 && average <= 100)
+            {
+                letterGrade = 'A';
+            }
+            else if (average >= 80 && average <= 89.9)
+            {
+                letterGrade = 'B';
+            }
+            else if (average >= 70 && average <= 79.9)
+            {
+                letterGrade = 'C';
+            }
+            else if (average >= 60 && average <= 69.9)
+            {
+                letterGrade = 'D';
+            }
+            else if (average < 60)
+            {
+                letterGrade = 'F';
+            }
+            
+
+            Console.WriteLine($"The average of the test scores you provided is: {average} and the grade is: {letterGrade}");
+            Console.ReadKey();
+            */
+
+        }

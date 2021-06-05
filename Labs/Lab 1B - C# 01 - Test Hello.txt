@@ -1,0 +1,69 @@
+ static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+            
+            int myInt = 1;
+            //float myFloat;
+            float myFloat = 0.42f;
+            bool myBoolean = true;
+            string myName = "John";
+            char myChar = 'a';
+            StringBuilder address = new StringBuilder();
+            address.Append("8150");
+            address.Append(", Marne Road");
+            address.Append(", Ft Benning, GA 31905");
+            string concatenatedAddress = address.ToString();
+            Console.WriteLine(concatenatedAddress);
+
+            Regex rx = new Regex(@"\b(?<word>\w+)\s+(\k<word>)\b", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            string smtText = "The Cloud Apps Developer Program is a great great opportunity to start a new career career.";
+            // Find match of duplicate of words.
+            MatchCollection matches = rx.Matches(smtText);
+            // Report the number of matches found.
+            Console.WriteLine("{0} matches found in:\n {1}", matches.Count, smtText);
+
+            double d = 5673.74;
+            int i;
+            // cast double to int.
+            i = (int)d;
+            Console.WriteLine(i);
+            string userEnteredValue = "542.12";
+
+            //int flightCost = Convert.ToInt32(userEnteredValue);
+            double flightCost = Convert.ToDouble(userEnteredValue);
+            //long flightCost = Convert.ToUInt32(userEnteredValue);
+            Console.WriteLine(flightCost);
+
+            Console.WriteLine(myInt);
+        }
+		
+	/* Questions:
+ * 
+ *2. When you try to build the code the way it is, 2 errors occur. the first is because the directions still had the using system commented out, so if we were to keep it that way
+ *the entered code should have been System.Console.WriteLine(myInt); for this ecercise, i'm assuming that we were supposed to change that back so I will adjust the code accordingly. The other error
+ *that occurs is that states that there is use of an unsigned local variable "myInt". This is because we created a variable for an interger and told the console to write it out, but we never 
+ *assigned value to that variable. The system cannot display what isn't there.
+ *
+ *5. When you try and build this code you receive one error and 4 messages. The error is that there is already a variable named "myFloat" that is defined in this scope. The messages that I received 
+ *are for unnecessary assignments of values to "myFloat", myBoolean", "myName", and "myChar". The error occurred because we initialized the variable "myFloat" twice, the first time we created it and 
+ *did not assign it a value, the second time we created it and assigned it a value. The first instance is unnecessary so i will comment it out to clear the error.
+ *
+ *
+ *2. When I start without debugging, the console window displays the following on separate lines: "Hello World", "5673", "1", and "Press any key to continue...". Ignoring the Hello World, the decimal
+ *values were left off of "5673.74" because we told the system that i was an interger and set it equal to the value of an operator that contained a decimal. Since int deals with whole numbers, the .74
+ *was dropped when we casted it. 
+ *
+ *3. When I change double d to int d, i receive an error message that states that you can't implicitly convert "double" to "int" and that an explicit conversion exists. This happened because the 
+ *system recognizes that I assigned an improper valut to the variable. 
+ *
+ *8. The only acceptable answer here is the double flightCost = Convert.ToDouble(userEnteredValue) because the string that we defined contains a decimal and the int and long data types 
+ *are used for handling whole numbers. With these two incorrect options commented out, I did receive the expected result when I ran the program. 
+ *
+ *
+ *2. When I ran this program without debugging, the command prompt displays "8150, Marne Road, Ft Benning, GA 31905". This happened because I created one long string out of several fragments that
+ *we pieced together. 
+ *
+ *5. When I run the compiled code, the console windowdisplays the message "2 matches found in: The Cloud Apps Developer Program is a great great opportunity to start a new career career". This 
+ *satisfies the intended results because the code inserted was meant to find and report the number of duplicate words in the string of text. Since there were two different words that were repeated,
+ *the outcome was successful. 
+*/

@@ -1,0 +1,28 @@
+class Program
+    {       
+        //My understanding of "syntatic sugar" means the having the ability to assign the parameters of variables upon declaration of the method to 
+        //cut down on the amount of code being written/utilized and could possibly assist in speeding up programs since the demand on system memory 
+        //would be lessened.
+        static public void MyMethod(string str1, string str2 = " Overloaded Method", string str3 = " Example With Strings")
+        {
+            Console.WriteLine(str1 + str2 + str3);
+            Console.ReadKey();
+
+            
+        }
+        static void Main(string[] args)
+        {
+            //passes to the above method with optional parameters
+            MyMethod("Tony Questel's");
+
+            //passes to the below method with overloaded functions
+            MyMethod("tony", " questel's", " overloaded", " method", " example", " using", " strings");
+        }
+        //I'm not sure what your mean by saying "Manually write out the method with overloaded functions. Please let me know if this does 
+        //not satisfy your intent. 
+        static public void MyMethod(string str1, string str2, string str3, string str4, string str5, string str6, string str7)
+        {
+            Console.WriteLine(str1 + str2 + str3 + str4 + str5 + str6 + str7);
+            Console.ReadKey();
+        }
+    }

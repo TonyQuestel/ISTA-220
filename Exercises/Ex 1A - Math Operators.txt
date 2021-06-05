@@ -1,0 +1,84 @@
+static void Main(string[] args)
+        {
+            // Part 1
+            // Partially worked example
+            Console.WriteLine("\nPart 1, circumference and area of a circle.");
+            Console.Write("Enter an integer for the radius: ");
+            string strradius = Console.ReadLine();
+            double radius = double.Parse(strradius);
+            double circumference = 2 * Math.PI * radius;
+            Console.WriteLine($"The circumference is {circumference}");
+
+            // Implementation for area here
+            double area = Math.PI * Math.Pow(radius, 2);
+            Console.WriteLine($"The area is {area}");
+
+
+            // Part 2
+            Console.WriteLine("\nPart 2, volume of a hemisphere.");
+            Console.Write("Enter an integer for the radius: ");
+            string hemisphere = Console.ReadLine();
+            double hemRad = int.Parse(hemisphere);
+
+            // Implementation here
+
+            double volume = (((4 / 3) * Math.PI * Math.Pow(hemRad, 3)) / 2);
+            Console.WriteLine($"The volume is {volume}");
+
+
+            // Part 3
+            Console.WriteLine("\nPart 3, area of a triangle (Heron's formula).");
+            Console.WriteLine("Please enter the length of side a: ");
+            string heronA = Console.ReadLine();
+            double sideA = double.Parse(heronA);
+            Console.WriteLine("Please enter the length of side b: ");
+            string heronB = Console.ReadLine();
+            double sideB = double.Parse(heronB);
+            Console.WriteLine("Please enter the length of side c: ");
+            string heronC = Console.ReadLine();
+            double sideC = double.Parse(heronC);
+
+            // Implementation here
+            double perimeter = ((sideA + sideB + sideC) / 2);
+            double heronArea = Math.Sqrt(perimeter * (perimeter - sideA) * (perimeter - sideB) * (perimeter - sideC));
+            Console.WriteLine($"The area is {heronArea}");
+
+
+            // Part 4
+            Console.WriteLine("\nPart 4, solving a quadratic equation.");
+            Console.WriteLine("Please enter the coefficient of the squared x term: ");
+            string squared = Console.ReadLine();
+            double term1 = double.Parse(squared);
+            Console.WriteLine("Please enter the coefficient of the non-squared x term. If it doesn't exist, enter \"0\"");
+            string nonSquared = Console.ReadLine();
+            double term2 = double.Parse(nonSquared);
+            Console.WriteLine("Please enter the value of the constant. If if doesn't exist, enter \"0\"");
+            string constant = Console.ReadLine();
+            double term3 = double.Parse(constant);
+            
+            // Implementation here
+            double denominator = (2 * term1);
+            double positive_num = ((-1 * term2) + (Math.Sqrt(Math.Pow(term2, 2) - (4 * term1 * term3))));
+            double negative_num = ((-1 * term2) - (Math.Sqrt(Math.Pow(term2, 2) - (4 * term1 * term3))));
+
+            if (positive_num / denominator < 0)
+            {
+                Console.WriteLine($"The 1st solution is also negative and it is {positive_num / denominator}");
+            }
+            else
+            {
+                Console.WriteLine($"The positive solution is {positive_num / denominator}");
+            }
+
+            if (negative_num / denominator > 0)
+            {
+                Console.WriteLine($"The 2nd solution is also positive and it is {negative_num / denominator}");
+            }
+            else
+            {
+                Console.WriteLine($"The negative solution is {negative_num / denominator}");
+            }
+            Console.ReadLine();
+            
+        }
+		
